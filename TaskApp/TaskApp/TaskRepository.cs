@@ -14,7 +14,7 @@ namespace TaskApp
             var stringBuilder = new StringBuilder();
             foreach (var task in taskModels)
             {
-                stringBuilder.Append($"{task.Description}|{task.StartDate}|{task.EndDate}|{task.IsAllDay}|{task.IsImportant}");
+                stringBuilder.AppendLine($"{task.Description}|{task.StartDate}|{task.EndDate}|{task.IsAllDay}|{task.IsImportant}");
             }
             File.WriteAllText(PATHFILE, stringBuilder.ToString());
         }
