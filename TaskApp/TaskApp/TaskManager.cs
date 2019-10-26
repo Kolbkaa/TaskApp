@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace TaskApp
@@ -78,6 +79,20 @@ namespace TaskApp
             }
             Console.ReadKey();
         }
+        private void PrintTask(List<TaskModel> listTask)
+        {
+            Console.Clear();
+            int counter = 1;
+            foreach (var task in listTask)
+            {
+                Console.WriteLine($"{counter}. { task.StartDate.ToShortDateString()} - {task.EndDate.Value.ToShortDateString()}, Całodniowe:{task.IsAllDay}, Ważne: {task.IsImportant} ");
+                Console.WriteLine("Opis:");
+                Console.WriteLine(task.Description);
+                Console.WriteLine();
+                counter++;
+            }
+            Console.ReadKey();
+        }
 
         public void Save()
         {
@@ -117,6 +132,10 @@ namespace TaskApp
                 ExConsole.Error("Błąd usuwania");
             }
             
+        }
+        public void Sort()
+        {
+            PrintTask(taskList.OrderBy(x => x.StartDate).ToList());
         }
     }
 }

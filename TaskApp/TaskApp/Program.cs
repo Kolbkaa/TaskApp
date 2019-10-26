@@ -18,6 +18,7 @@ namespace TaskApp
                 else if (command == "load") taskManager.Load();
                 else if (command == "clear") taskManager.Clear();
                 else if (command == "remove") taskManager.Remove();
+                else if (command == "printStartDateSort") taskManager.Sort();
             } while (command != "exit");
         }
     }
