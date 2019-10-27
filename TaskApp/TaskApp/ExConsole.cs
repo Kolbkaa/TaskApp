@@ -16,6 +16,8 @@ namespace TaskApp
             Console.WriteLine("load");
             Console.WriteLine("clear");
             Console.WriteLine("remove");
+            Console.WriteLine("printStartDateSort");
+            Console.WriteLine("selectFiveEarly");
             Console.WriteLine("exit\n");
             Console.WriteLine("Podaj polecenie:");
             Console.ForegroundColor = ConsoleColor.White;

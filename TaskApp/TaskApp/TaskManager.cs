@@ -137,5 +137,9 @@ namespace TaskApp
         {
             PrintTask(taskList.OrderBy(x => x.StartDate).ToList());
         }
+        public void SelectFiveToEarly()
+        {
+            PrintTask(taskList.OrderBy(x => x.StartDate).Take(5).ToList());
+        }
     }
 }
